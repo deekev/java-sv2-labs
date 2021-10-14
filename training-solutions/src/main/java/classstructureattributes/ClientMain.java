@@ -19,7 +19,7 @@ public class ClientMain {
 
         System.out.println();
         System.out.println("Your client profile:");
-        System.out.println("Name:" + "" + client.name);
+        System.out.println("Name:" + " " + client.name);
         System.out.println("Year of birth:" + client.yearOfBirth);
         System.out.println("Address:" + client.address);
 
