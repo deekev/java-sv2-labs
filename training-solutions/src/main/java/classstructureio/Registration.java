@@ -14,7 +14,7 @@ public class Registration {
 
         System.out.println();
         System.out.println("You have successfully registered.");
-        System.out.println("Name:" + "" + name);
-        System.out.println("E-mail address:" + "" + email);
+        System.out.println("Name:" + " " + name);
+        System.out.println("E-mail address:" + " " + email);
     }
 }
