@@ -14,6 +14,7 @@ public class Calculator {
         int secondNumber = scanner.nextInt();
         scanner.nextLine();
 
+        System.out.println();
         System.out.println("Your numbers are:");
         System.out.println("" + firstNumber + " + " + secondNumber);
         System.out.println(firstNumber + secondNumber);
