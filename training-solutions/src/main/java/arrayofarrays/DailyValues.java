@@ -24,7 +24,7 @@ public class DailyValues {
     }
 
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 
         DailyValues dailyValues = new DailyValues();
         dailyValues.getValues();
