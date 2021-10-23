@@ -20,10 +20,8 @@ public class Second {
         numbers.add(35);
         numbers.add(92);
 
-        for (int i = 0; i < numbers.size(); i++){
-            if (i % 2 == 1){
+        for (int i = 0; i < numbers.size(); i += 2){
                 System.out.print(numbers.get(i) + ", ");
-            }
         }
     }
 }
