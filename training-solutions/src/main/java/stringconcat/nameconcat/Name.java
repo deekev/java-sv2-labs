@@ -29,7 +29,7 @@ public class Name {
             nameWesternStyle = givenName.concat(" ");
         }
 
-        if (middleName != null || "".equals(middleName)) {
+        if (middleName != null && !"".equals(middleName)) {
             nameWesternStyle = nameWesternStyle.concat(middleName).concat(" ");
         }
 
@@ -51,7 +51,7 @@ public class Name {
         nameHungarianStyle += givenName;
         nameHungarianStyle += " ";
 
-        if (middleName != null || "".equals(middleName)) {
+        if (middleName != null && !"".equals(middleName)) {
             nameHungarianStyle += middleName;
             nameHungarianStyle += " ";
         }
