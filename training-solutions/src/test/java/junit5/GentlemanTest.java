@@ -7,22 +7,30 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class GentlemanTest {
 
     @Test
-    void testGreeting() {
+    void testGreetingWithName() {
         //Given
-        Gentleman gentleman = new Gentleman();
+        String name = "John Doe";
 
         //When
-        String greeting = gentleman.sayHello("John Doe");
+        String greeting = new Gentleman().sayHello(name);
 
         //Then
-        assertEquals("Hello JohnDoe!", greeting);
+        assertEquals("Hello John Doe!", greeting);
+    }
+
+    @Test
+    void testGreetingWithNull() {
+        String name = null;
+        String greeting = new Gentleman().sayHello(name);
+        assertEquals("Hello Anonymus!", greeting);
     }
 }
 
 /*
-Rontsd el a tesztesetet, hogy hibás legyen, amire ellenőriz!
-org.opentest4j.AssertionFailedError:
-Expected :Hello JohnDoe!
-Actual   :Hello John Doe!
-Process finished with exit code -1
+Futtasd le a tesztlefedettség mérést, és nézd meg,
+hogy hogyan jelzi a fejlesztőeszköz, hogy az új ág nem lett lefedve!
+Line, % --> 75% (3/4)
+
+Implementáld a megfelelő tesztesetet és futtasd le újra a lefedettség mérést!
+Line, % --> 100% (4/4)
  */
