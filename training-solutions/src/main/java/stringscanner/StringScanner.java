@@ -11,8 +11,10 @@ public class StringScanner {
         Scanner sc1 = new Scanner(System.in);
 
         System.out.println("Írjon egy tetszőleges mondatot, ami legalább 3 tagmondatból áll.");
-        System.out.println(sc1.nextLine());
-        System.out.println();
+        Scanner sc3 = new Scanner(sc1.nextLine());
+        while (sc3.hasNext()) {
+            System.out.println(sc3.next());
+        }
 
         System.out.println("Írjon egy újabb mondatot, amely megfelel a korábbi feltételnek.");
         Scanner sc2 = new Scanner(sc1.nextLine()).useDelimiter(", ");
