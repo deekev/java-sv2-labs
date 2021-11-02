@@ -8,16 +8,21 @@ import static org.junit.Assert.assertThat;
 public class GentlemanTest {
 
     @Test
-    public void testSayHello() {
-        assertThat(new Gentleman().sayHello("John Doe"), equalTo("HelloJohn Doe!"));
+    public void testSayHelloName() {
+        assertThat(new Gentleman().sayHello("John Doe"), equalTo("Hello John Doe!"));
+    }
+
+    @Test
+    public void testSayHelloNull() {
+        assertThat(new Gentleman().sayHello(null), equalTo("Hello Anonymus!"));
     }
 }
 
 /*
-Rontsd el a tesztesetet, hogy hibás legyen, amire ellenőriz!
-java.lang.AssertionError:
-Expected: "HelloJohn Doe!"
-     but: was "Hello John Doe!"
-Expected :HelloJohn Doe!
-Actual   :Hello John Doe!
+Futtasd le a tesztlefedettség mérést, és nézd meg,
+hogy hogyan jelzi a fejlesztőeszköz, hogy az új ág nem lett lefedve!
+Line, % --> 75% (3/4)
+
+Implementáld a megfelelő tesztesetet és futtasd le újra a lefedettség mérést!
+Line, % --> 100% (4/4)
  */
