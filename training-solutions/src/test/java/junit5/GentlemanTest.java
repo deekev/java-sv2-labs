@@ -18,3 +18,11 @@ public class GentlemanTest {
         assertEquals("Hello John Doe!", greeting);
     }
 }
+
+/*
+Rontsd el először a programot, hogy hibás üzenetet adjon vissza!
+org.opentest4j.AssertionFailedError:
+Expected :Hello John Doe!
+Actual   :HelloJohn Doe!
+Process finished with exit code -1
+ */
