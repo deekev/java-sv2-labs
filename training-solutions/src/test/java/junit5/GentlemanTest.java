@@ -15,14 +15,14 @@ public class GentlemanTest {
         String greeting = gentleman.sayHello("John Doe");
 
         //Then
-        assertEquals("Hello John Doe!", greeting);
+        assertEquals("Hello JohnDoe!", greeting);
     }
 }
 
 /*
-Rontsd el először a programot, hogy hibás üzenetet adjon vissza!
+Rontsd el a tesztesetet, hogy hibás legyen, amire ellenőriz!
 org.opentest4j.AssertionFailedError:
-Expected :Hello John Doe!
-Actual   :HelloJohn Doe!
+Expected :Hello JohnDoe!
+Actual   :Hello John Doe!
 Process finished with exit code -1
  */
