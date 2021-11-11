@@ -8,23 +8,32 @@ public class MeetingRoomController {
 
     private Office office = new Office();
 
-    private final String menu =
-                    "1. Tárgyaló rögzítése\n" +
-                    "2. Tárgyalók sorrendben\n" +
-                    "3. Tárgyalók visszafele sorrendben\n" +
-                    "4. Minden második tárgyaló\n" +
-                    "5. Területek\n" +
-                    "6. Keresés pontos név alapján\n" +
-                    "7. Keresés névtöredék alapján\n" +
-                    "8. Keresés terület alapján\n" +
-                    "9. Kilépés";
+    private Menu menu = new Menu();
 
     public void printMenu() {
-        System.out.print(menu);
+        System.out.print(menu.getMenu());
         System.out.println();
     }
 
     public void readOffice() {
+        office.addMeetingRoom(createMeetingRoom());
+    }
+
+    public void runMenu() {
+        printMenu();
+        System.out.println();
+        selectMenu(askMenu());
+    }
+
+    private int askMenu() {
+        System.out.println("Adja meg a kiválasztott menüpont számát: ");
+        int numberOfMenu = sc.nextInt();
+        sc.nextLine();
+        System.out.println();
+        return numberOfMenu;
+    }
+
+    private MeetingRoom createMeetingRoom() {
         System.out.println("Adja meg a tárgyaló paramétereit: ");
         System.out.println("Név:");
         String name = sc.nextLine();
@@ -37,17 +46,7 @@ public class MeetingRoomController {
         System.out.println();
 
         MeetingRoom meetingRoom = new MeetingRoom(name, length, width);
-        office.addMeetingRoom(meetingRoom);
-    }
-
-    public void runMenu() {
-        printMenu();
-        System.out.println();
-        System.out.println("Adja meg a kiválasztott menüpont számát: ");
-        int numberOfMenu = sc.nextInt();
-        sc.nextLine();
-        System.out.println();
-        selectMenu(numberOfMenu);
+        return meetingRoom;
     }
 
     private void selectMenu(int number) {
@@ -80,6 +79,7 @@ public class MeetingRoomController {
             case 6:
                 System.out.println("Adja meg a tárgyaló nevét:");
                 String name = sc.nextLine();
+                System.out.println();
                 office.printMeetingRoomsWithName(name);
                 runMenu();
                 break;
@@ -87,6 +87,7 @@ public class MeetingRoomController {
             case 7:
                 System.out.println("Adja meg a szórészletet:");
                 String part = sc.nextLine();
+                System.out.println();
                 office.printMeetingRoomsContains(part);
                 runMenu();
                 break;
@@ -95,6 +96,7 @@ public class MeetingRoomController {
                 System.out.println("Adja meg a tárgyaló területét:");
                 int area = sc.nextInt();
                 sc.nextLine();
+                System.out.println();
                 office.printAreasLargerThan(area);
                 runMenu();
                 break;
