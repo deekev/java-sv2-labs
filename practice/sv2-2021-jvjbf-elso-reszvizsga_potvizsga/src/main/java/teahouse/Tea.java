@@ -30,10 +30,9 @@ public class Tea {
 
     @Override
     public String toString() {
-        StringBuilder stringBuilder = new StringBuilder(
-                name + ": " + sort.getAdditionalInfo() + " ("
-                + price + " Ft)"
-        );
+        StringBuilder stringBuilder = new StringBuilder(name)
+                .append(": ").append(sort.getAdditionalInfo()).append(" (")
+                .append(price).append(" Ft)");
         return stringBuilder.toString();
     }
 }
