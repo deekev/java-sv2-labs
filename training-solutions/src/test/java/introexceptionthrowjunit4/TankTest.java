@@ -14,8 +14,8 @@ public class TankTest {
         Tank tank = new Tank();
         tank.modifyAngle(80);
         assertEquals(80, tank.getAngle());
-        tank.modifyAngle(200);
-        assertEquals(280, tank.getAngle());
+        tank.modifyAngle(-120);
+        assertEquals(320, tank.getAngle());
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -36,7 +36,7 @@ public class TankTest {
     @Test
     public void testExceptionThird() {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
-                () -> new Tank().modifyAngle(279));
+                () -> new Tank().modifyAngle(-279));
         assertEquals("A fordulás szöge nem eshet 80° és 280° közé!", exception.getMessage());
     }
 }
