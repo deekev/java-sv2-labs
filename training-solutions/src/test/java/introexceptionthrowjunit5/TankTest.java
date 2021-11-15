@@ -12,8 +12,8 @@ class TankTest {
         Tank tank = new Tank();
         tank.modifyAngle(80);
         assertEquals(80, tank.getAngle());
-        tank.modifyAngle(280);
-        assertEquals(360, tank.getAngle());
+        tank.modifyAngle(-120);
+        assertEquals(320, tank.getAngle());
     }
 
     @Test
