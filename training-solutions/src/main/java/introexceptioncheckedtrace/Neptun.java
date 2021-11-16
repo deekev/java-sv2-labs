@@ -10,16 +10,21 @@ public class Neptun {
 
     public static void main(String[] args) {
 
+        Neptun neptun = new Neptun();
+        List<String> namesWithNeptunCode = new ArrayList<>();
+
         try {
-            List<String> namesWithNeptunCode = new Neptun().readFile();
-            System.out.println(new Neptun().getNeptunCodes(namesWithNeptunCode));
+            namesWithNeptunCode = neptun.readFile();
         }
         catch (IOException ioe) {
             System.out.println("Can not read file");
             ioe.printStackTrace();
         }
 
+        System.out.println(neptun.getNeptunCodes(namesWithNeptunCode));
+
     }
+
 
     private List<String> readFile() throws IOException {
         return Files.readAllLines(Paths.get("src/main/resources/neptun.csv"));
