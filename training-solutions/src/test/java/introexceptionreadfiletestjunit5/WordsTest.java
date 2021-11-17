@@ -25,7 +25,7 @@ class WordsTest {
     @Test
     void testGetFirstWordWithAException() {
         IllegalStateException exception = assertThrows(IllegalStateException.class,
-                () -> new Words().getFirstWordWithA(Paths.get("src/test/resources/words2_txt")));
+                () -> words.getFirstWordWithA(Paths.get("src/test/resources/words2_txt")));
         assertEquals("Can not read file", exception.getMessage());
     }
 }
